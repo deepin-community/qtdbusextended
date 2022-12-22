@@ -1,0 +1,49 @@
+Source: qtdbusextended
+Section: misc
+Priority: optional
+Maintainer: Debian Deepin Packaging Team <pkg-deepin-devel@lists.alioth.debian.org>
+Uploaders:
+ Boyuan Yang <byang@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ qt5-qmake,
+ qtbase5-dev,
+Rules-Requires-Root: no
+Standards-Version: 4.6.0
+Homepage: https://github.com/nemomobile/qtdbusextended
+Vcs-Git: https://salsa.debian.org/pkg-deepin-team/qtdbusextended.git
+Vcs-Browser: https://salsa.debian.org/pkg-deepin-team/qtdbusextended
+
+Package: libdbusextended-qt5-1
+Architecture: any
+Section: libs
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Multi-Arch: same
+Description: Extended DBus interface for Qt
+ Qtdbusextended library provides several additional features to the original
+ QDbusAbstractInterface class, includes:
+  - Handling of PropertiesChanged signal in DBus Properties Interface
+  - the GetAll method in DBus Properties Interface
+  - asynchronous alternative to original synchronous QtDBus properties mechanism
+  - an alternative cache mechanism for Qt DBus traffic
+ .
+ This package provides shared library files.
+
+Package: libdbusextended-qt5-dev
+Architecture: any
+Section: libdevel
+Depends:
+ libdbusextended-qt5-1 (= ${binary:Version}),
+ ${misc:Depends},
+Multi-Arch: same
+Description: Extended DBus interface for Qt (development files)
+ Qtdbusextended library provides several additional features to the original
+ QDbusAbstractInterface class, includes:
+  - Handling of PropertiesChanged signal in DBus Properties Interface
+  - the GetAll method in DBus Properties Interface
+  - asynchronous alternative to original synchronous QtDBus properties mechanism
+  - an alternative cache mechanism for Qt DBus traffic
+ .
+ This package provides development files for qtdbusextended library.
